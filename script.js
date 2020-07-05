@@ -1,3 +1,18 @@
+/*
+ 	* Start game
+*/
+const intro = document.getElementById("intro");
+const startButton = document.getElementById("startBtn");
+const gameContainer = document.getElementById("game");
+const startGame = () => {
+	if (gameContainer.classList.value.includes("hidden")) {
+		gameContainer.classList.remove("hidden");
+		intro.classList.add("hidden");
+	} else {
+		console.log("Game is already running...")
+	}		
+}
+startButton.addEventListener("click", () => startGame());
 
 /*
 	* PIKACHU JUMP
@@ -12,8 +27,11 @@ const jump = () => {
 };
 
 document.body.onkeyup = e => {
-	if (e.keyCode === 32 || e.code === 'Space') jump();
+	if (e.keyCode === 32 || e.code === 'Space' || e.code === 'touchstart') jump();
 };
+
+// TODO -> MAKE PIKACHU JUMP ON TAP/TOUCH (mobile devices)
+// document.addEventListener('touchstart', jump(), false);
 
 /*
 	* CLOUDS

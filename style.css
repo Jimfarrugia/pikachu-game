@@ -9,25 +9,23 @@ body {
 }
 
 #container {
+  /* background: pink; */
   width: 90vw;
   max-width: calc(2vh * 75);
   margin: 5vh auto 0;
-
-  background: pink;
 }
 
-.intro {
+#intro {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding: 0 0 5vh;
   text-align: center;
 }
-.intro h1 {
-  margin: 2.5rem 0;
-  background: aquamarine;
+#intro h1 {
+  /* background: aquamarine; */
 }
 
 #startBtn {
-  transform: scale(1.75);
+  transform: scale(1.5);
 }
 
 #game {
@@ -45,7 +43,7 @@ body {
 }
 
 .pikachu {
-  background-color: greenyellow;
+  /* background-color: greenyellow; */
   background-image: url("https://raw.githubusercontent.com/Jimfarrugia/pikachu-animation/master/img/pikachu-sprite-trans.png");
   background-position: -29px -141px;
   background-repeat: no-repeat;
