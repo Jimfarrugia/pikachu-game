@@ -82,31 +82,12 @@ p {
   bottom: 0px;
   height: 30px;
   width: 52px;
-  margin: 90px auto 13px 35%;
-  transform: scale(2);
-  animation: run 0.4s step-start infinite;
+  margin: 90px auto 6px 35%;
+  transform: scale(1.5);
+  animation: pikachu-run 0.4s step-start infinite;
 }
 
-.diglet {
-  background: blue;
-  position: absolute;
-  bottom: 0;
-  right: -10px;
-  width: 20px;
-  height: 20px;
-  animation: enemy-scroll 2s infinite linear;
-}
-
-@keyframes enemy-scroll {
-  0% {
-    right: -10px;
-  }
-  100% {
-    right: 100%;
-  }
-}
-
-@keyframes run {
+@keyframes pikachu-run {
   25% {
     background-position: -89px -141px;
   }
@@ -115,6 +96,65 @@ p {
   }
   75% {
     background-position: -209px -141px;
+  }
+}
+
+.pidgey {
+  background: hotpink;
+  position: absolute;
+  bottom: 70px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.diglet {
+  background: url("img/diglet-sprite-trans.png");
+  background-position: -4px -2px;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 18px;
+  transform: scale(1.5);
+  animation: diglet 0.75s infinite step-start;
+}
+
+@keyframes diglet {
+  0% {
+    background-position: -128px -3px;
+  }
+  15% {
+    background-position: -3px -30px;
+  }
+  30% {
+    background-position: -35px -30px;
+  }
+  45% {
+    background-position: -4px -0px;
+  }
+  60% {
+    background-position: -32px -2px;
+  }
+  75% {
+    background-position: -63px -2px;
+  }
+  90% {
+    background-position: -94px -2px;
+  }
+}
+
+.enemy {
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  animation: enemy-scroll 3s infinite linear;
+}
+
+@keyframes enemy-scroll {
+  0% {
+    right: -10px;
+  }
+  100% {
+    right: 100%;
   }
 }
 
