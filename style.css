@@ -10,6 +10,10 @@ h1 {
   margin-bottom: 2rem;
 }
 
+p {
+  line-height: 1.35;
+}
+
 #scoreboard li {
   float: right;
   margin: 1rem 0;
