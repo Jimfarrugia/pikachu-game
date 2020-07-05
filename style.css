@@ -12,7 +12,8 @@ body {
 #container {
   /* background: pink; */
   width: 90vw;
-  max-width: calc(2vh * 75);
+  max-width: 900px;
+  /* max-width: calc(2vh * 75); */
   margin: 5vh auto 0;
 }
 
@@ -36,11 +37,21 @@ body {
 
 #background {
   background: #548cff;
+  background: linear-gradient(to top, #2d91c2 0%, #1e528e 100%);
   position: relative;
   width: 100%;
   max-width: 90vw;
-  min-height: calc(90vh / 2);
+  min-height: 400px;
   overflow: hidden;
+}
+.sky-gradient-12 {
+  background: linear-gradient(to bottom, #90dffe 0%, #38a3d1 100%);
+}
+.sky-gradient-13 {
+  background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%);
+}
+.sky-gradient-14 {
+  background: linear-gradient(to bottom, #2d91c2 0%, #1e528e 100%);
 }
 
 .pikachu {
