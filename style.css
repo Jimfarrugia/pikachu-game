@@ -5,15 +5,30 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+#scoreboard li {
+  float: right;
+  margin: 1rem 0;
+}
+#scoreboard li:first-child {
+  float: left;
+}
+
+.clearfix {
+  clear: both;
+}
+
 .hidden {
   display: none;
 }
 
 #container {
-  /* background: pink; */
   width: 90vw;
   max-width: 900px;
-  /* max-width: calc(2vh * 75); */
   margin: 5vh auto 0;
 }
 
@@ -37,13 +52,14 @@ body {
 
 #background {
   background: #548cff;
-  background: linear-gradient(to top, #2d91c2 0%, #1e528e 100%);
+  background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%);
   position: relative;
   width: 100%;
   max-width: 90vw;
   min-height: 400px;
   overflow: hidden;
 }
+/* alternate background gradients */
 .sky-gradient-12 {
   background: linear-gradient(to bottom, #90dffe 0%, #38a3d1 100%);
 }
@@ -66,6 +82,20 @@ body {
   margin: 90px auto 13px 35%;
   transform: scale(2);
   animation: run 0.4s step-start infinite;
+}
+
+.diglet {
+  /* background-color: greenyellow;
+  background-image: url("https://raw.githubusercontent.com/Jimfarrugia/pikachu-animation/master/img/pikachu-sprite-trans.png");
+  background-position: -29px -141px;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0px;
+  height: 30px;
+  width: 52px;
+  margin: 90px auto 13px 35%;
+  transform: scale(2);
+  animation: run 0.4s step-start infinite; */
 }
 
 @keyframes run {

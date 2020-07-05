@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Pikachu</title>
   </head>
@@ -17,15 +18,21 @@
           <div id="clouds"></div>
           <div id="snowflakes" aria-hidden="true"></div>
           <div class="pikachu"></div>
+          <div class="diglet"></div>
         </div>
         <div id="ground"></div>
         <div id="underground"></div>
+        <ul id="scoreboard">
+          <li>Score: 0</li>
+          <li>Record: 0</li>
+        </ul>
       </div>
-    </div>
-    <div id="info">
-      <p>
-        Make Pikachu jump with the spacebar, by clicking or by tapping.
-      </p>
+      <div id="info">
+        <div class="clearfix"></div>
+        <p>
+          Make Pikachu jump with the spacebar, by clicking or by tapping.
+        </p>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

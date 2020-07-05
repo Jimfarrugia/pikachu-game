@@ -1,5 +1,12 @@
+// TODO
+// [ ] enemy diglets
+// [ ] scoreboard
+// ? sound effects
+// ? music
+// ? style the page
+
 /*
- 	* Start game
+ 	* Start Game
 */
 const intro = document.getElementById("intro");
 const startButton = document.getElementById("startBtn");
@@ -15,7 +22,7 @@ const startGame = () => {
 startButton.addEventListener("click", () => startGame());
 
 /*
-	* PIKACHU JUMP
+	* Jump
 */
 const character = document.querySelector(".pikachu");
 const isJumping = () => character.classList.value.includes("jumping");
@@ -31,7 +38,7 @@ document.body.onkeyup = e => (e.keyCode === 32 || e.keyCode === 38) ? jump() : n
 document.body.ontouchstart = () => jump();
 
 /*
-	* CLOUDS
+	* Generate Clouds
 */
 const singleCloudImgPath = "https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/CloudSingle.gif"
 const doubleCloudImgPath = "https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/CloudDouble.gif"
@@ -54,7 +61,7 @@ for (let i = 0; i < numOfClouds; i++) {
 }
 
 /*
-	* SNOWFLAKES
+	* Generate Snowflakes
 */
 const snowflakes = document.getElementById("snowflakes");
 
