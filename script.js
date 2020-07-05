@@ -26,12 +26,8 @@ const jump = () => {
 	}
 };
 
-document.body.onkeyup = e => {
-	if (e.keyCode === 32 || e.code === 'Space' || e.code === 'touchstart') jump();
-};
-
-// TODO -> MAKE PIKACHU JUMP ON TAP/TOUCH (mobile devices)
-// document.addEventListener('touchstart', jump(), false);
+document.body.onkeyup = e => (e.keyCode === 32 || e.code === 'Space') ? jump() : null;
+document.body.ontouchstart = e => jump();
 
 /*
 	* CLOUDS
