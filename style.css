@@ -4,14 +4,37 @@ body {
   background: #ccc;
 }
 
+.hidden {
+  display: none;
+}
+
 #container {
-  background: blueviolet;
   width: 90vw;
   max-width: calc(2vh * 75);
   margin: 5vh auto 0;
+
+  background: pink;
 }
 
-.background {
+.intro {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 0 0 5vh;
+  text-align: center;
+}
+.intro h1 {
+  margin: 2.5rem 0;
+  background: aquamarine;
+}
+
+#startBtn {
+  transform: scale(1.75);
+}
+
+#game {
+  background: blueviolet;
+}
+
+#background {
   background: #548cff;
   position: relative;
   width: 100%;
@@ -27,7 +50,7 @@ body {
   background-position: -29px -141px;
   background-repeat: no-repeat;
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   height: 30px;
   width: 52px;
   margin: 90px auto 13px 35%;
@@ -102,7 +125,7 @@ body {
   }
 }
 
-.ground {
+#ground {
   height: 32px;
   width: 100%;
   max-width: 90vw;
