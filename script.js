@@ -25,9 +25,10 @@ const jump = () => {
 		setTimeout(() => character.classList.remove("jumping"), 500);
 	}
 };
-
-document.body.onkeyup = e => (e.keyCode === 32 || e.code === 'Space') ? jump() : null;
-document.body.ontouchstart = e => jump();
+// keycodes: 32 = spacebar, 38 = up-arrow
+gameContainer.addEventListener("click", () => jump());
+document.body.onkeyup = e => (e.keyCode === 32 || e.keyCode === 38) ? jump() : null;
+document.body.ontouchstart = () => jump();
 
 /*
 	* CLOUDS
