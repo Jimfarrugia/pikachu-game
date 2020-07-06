@@ -671,6 +671,8 @@ table {
   padding: 1.25rem 1rem 2.5rem 2rem;
   border: 2px solid #ffffff90;
   border-radius: 0.5rem;
+  -webkit-animation: glow 1s infinite ease;
+          animation: glow 1s infinite ease;
 }
 
 #startBtn:hover {
@@ -678,6 +680,18 @@ table {
   border-color: #ffffffaa;
   -webkit-box-shadow: 0 0 20px #ffffffaa;
           box-shadow: 0 0 20px #ffffffaa;
+}
+
+@-webkit-keyframes glow {
+  50% {
+    border-color: #ffffffff;
+  }
+}
+
+@keyframes glow {
+  50% {
+    border-color: #ffffffff;
+  }
 }
 
 body {
