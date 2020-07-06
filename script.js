@@ -20,7 +20,7 @@ const overlap = (a, b) => !(a.right < b.left || a.left > b.right || a.bottom < b
 const animateEnemies = enemies => 
 	enemies.forEach((enemy, index) => {
 		enemy.style.animation = "enemy-scroll 3s infinite linear";
-		if (index % 2 !== 0) enemy.style.animationDelay = "2s";
+		if (index % 2 !== 0) enemy.style.animationDelay = "4s";
 	});
 
 const removeEnemies = enemies =>
