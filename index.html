@@ -8,13 +8,10 @@
   </head>
   <body>
     <div id="container">
-      <div id="intro">
-        <h1>Ready?</h1>
-        <button type="button" id="startBtn">GO</button>
-      </div>
       <div id="game">
         <div id="background">
           <div id="clouds"></div>
+          <a href="#" id="startBtn" class="color-bleed">START</a>
           <div id="snowflakes" aria-hidden="true"></div>
           <div class="pikachu"></div>
           <div class="enemy enemy-running">
@@ -28,14 +25,14 @@
         <div id="underground"></div>
         <ul id="scoreboard">
           <li id="currentScore">Score: 0</li>
-          <li>Record: 0</li>
+          <li id="currentRecord">Record: 0</li>
         </ul>
       </div>
       <div id="info">
         <div class="clearfix"></div>
         <button type="button" id="restartBtn" class="hidden">Restart</button>
         <p>
-          Make Pikachu jump with the spacebar, by clicking or by tapping.
+          Jump with the spacebar, by clicking or by tapping.
         </p>
       </div>
     </div>

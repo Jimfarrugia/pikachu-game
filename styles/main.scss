@@ -5,6 +5,7 @@
 @import "pikachu";
 @import "diglet";
 @import "pidgey";
+@import "colorBleed";
 
 body {
   margin: 0;
@@ -36,13 +37,19 @@ p {
   margin: 5vh auto 0;
 }
 
-#intro {
-  padding: 0 0 5vh;
-  text-align: center;
-}
-
 #startBtn {
-  transform: scale(1.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -1rem 0 0 -7.5rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 5rem;
+  letter-spacing: 0.125rem;
+  text-decoration: none;
+  color: #fff;
+}
+#startBtn:hover {
+  color: #eee;
 }
 
 #info {
