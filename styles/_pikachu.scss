@@ -1,0 +1,44 @@
+.pikachu {
+  /* background-color: greenyellow; */
+  background-image: url("../img/pikachu-sprite-trans.png");
+  background-position: -29px -141px;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0px;
+  height: 30px;
+  width: 52px;
+  margin: 90px auto 6px 25%;
+  transform: scale(1.5);
+  animation: pikachu-run 0.4s step-start infinite;
+}
+
+@keyframes pikachu-run {
+  25% {
+    background-position: -89px -141px;
+  }
+  50% {
+    background-position: -149px -141px;
+  }
+  75% {
+    background-position: -209px -141px;
+  }
+}
+
+.jumping {
+  animation: jumping 0.75s linear;
+}
+
+@keyframes jumping {
+  0% {
+    bottom: 0;
+  }
+  30% {
+    bottom: 75px;
+  }
+  70% {
+    bottom: 75px;
+  }
+  100% {
+    bottom: 0;
+  }
+}

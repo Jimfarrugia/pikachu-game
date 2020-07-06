@@ -1,0 +1,36 @@
+.cloud {
+  position: absolute;
+  height: 100px;
+  top: 30px;
+  animation: wind 1s linear infinite;
+  transform: scale(0.75);
+}
+.cloud:nth-child(1) {
+  animation-duration: 34s;
+  right: 0;
+}
+.cloud:nth-child(2) {
+  animation-duration: 55s;
+  right: -300px;
+}
+.cloud:nth-child(3) {
+  animation-duration: 89s;
+  top: 40px;
+  right: -500px;
+}
+.cloud:nth-child(4) {
+  animation-duration: 144s;
+  top: 40px;
+  right: -800px;
+}
+.cloud:nth-child(5) {
+  animation-duration: 233s;
+  top: 40px;
+  right: -1300px;
+}
+
+@keyframes wind {
+  to {
+    right: 100vw;
+  }
+}

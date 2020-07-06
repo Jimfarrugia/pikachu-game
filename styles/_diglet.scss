@@ -1,0 +1,48 @@
+.diglet {
+  background: url("../img/diglet-sprite-trans.png");
+  background-position: -4px -2px;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 18px;
+  transform: scale(1.5);
+  animation: diglet 0.75s infinite step-start;
+}
+
+@keyframes diglet {
+  8% {
+    background-position: -128px -3px;
+  }
+  16% {
+    background-position: -3px -30px;
+  }
+  24% {
+    background-position: -35px -30px;
+  }
+  32% {
+    background-position: -4px -0px;
+  }
+  40% {
+    background-position: -32px -2px;
+  }
+  48% {
+    background-position: -63px -2px;
+  }
+  56% {
+    background-position: -94px -2px;
+  }
+  64% {
+    background-position: -63px -2px;
+  }
+  72% {
+    background-position: -32px -2px;
+  }
+  80% {
+    background-position: -4px -0px;
+  }
+  88% {
+    background-position: -35px -30px;
+  }
+  96% {
+    background-position: -3px -30px;
+  }
+}

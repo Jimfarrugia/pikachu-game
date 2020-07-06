@@ -8,23 +8,31 @@ const gameContainer = document.getElementById("game");
 let score = 0;
 let currentScore = document.getElementById("currentScore");
 let gameActive = false;
-const enemy = document.querySelectorAll(".enemy")[0];
+const enemies = document.querySelectorAll(".enemy");
 
+const animateEnemy = enemy => enemy.style.animation = "enemy-scroll 3s infinite linear";
 
 const startGame = () => {
 	if (gameContainer.classList.value.includes("hidden")) {
 		gameContainer.classList.remove("hidden");
 		intro.classList.add("hidden");
 		gameActive = true;
-		enemy.style.animation = "enemy-scroll 3s infinite linear";
-	}		
+		enemies.forEach((enemy, index) => {
+			animateEnemy(enemy)
+			if (index % 2 !== 0) {
+				enemy.style.animationDelay = "2s";
+			}
+		});
+	}	
 }
 startButton.addEventListener("click", () => {
 	startGame();
 });
 restartButton.addEventListener("click", () => {
 	startGame();
-	enemy.style.animation = "enemy-scroll 3s infinite linear";
+	enemies.forEach(enemy => {
+		animateEnemy(enemy)
+	});
 	restartButton.classList.value = "hidden";
 });
 
@@ -50,23 +58,26 @@ document.body.ontouchstart = () => jump();
 const checkDead = setInterval(function() {
 	if (gameActive) {
 		const characterEdges = character.getBoundingClientRect();
-		const enemyEdges = enemy.getBoundingClientRect();
 		const overlap = (a, b) => !(
 			a.right < b.left || 
 			a.left > b.right || 
 			a.bottom < b.top || 
 			a.top > b.bottom
 		);
-		if (overlap(characterEdges, enemyEdges)) {
-			console.log("game over");
-			enemy.style.animation = "none";
-			restartButton.classList.value = "";
-			gameActive = false;
-		}
-		if (enemyEdges.left <= 26) {
-			score += 1
-			currentScore.innerHTML = `Score: ${score}`;
-		}
+		enemies.forEach(enemy => {
+			const enemyEdges = enemy.getBoundingClientRect();
+		
+			if (overlap(characterEdges, enemyEdges)) {
+				console.log("game over");
+				enemy.style.animation = "none";
+				restartButton.classList.value = "";
+				gameActive = false;
+			}
+			if (enemyEdges.left <= 26) {
+				score += 1
+				currentScore.innerHTML = `Score: ${score}`;
+			}
+		});
 	}
 }, 10);
 

@@ -1,0 +1,27 @@
+$sky-gradient-light: linear-gradient(to bottom, #90dffe 0%, #38a3d1 100%);
+$sky-gradient-medium: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%);
+$sky-gradient-dark: linear-gradient(to bottom, #2d91c2 0%, #1e528e 100%);
+
+#background {
+  background: #548cff;
+  background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%);
+  position: relative;
+  width: 100%;
+  max-width: 90vw;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+#ground {
+  height: 32px;
+  width: 100%;
+  max-width: 90vw;
+  background: #c84c0c url("../img/groundblock32.png");
+  animation: scroll-ground 0.25s linear infinite;
+}
+
+@keyframes scroll-ground {
+  100% {
+    background-position: -32px 0;
+  }
+}

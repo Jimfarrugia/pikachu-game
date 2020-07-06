@@ -1,0 +1,609 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#background {
+  background: #548cff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#57c1eb), to(#246fa8));
+  background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%);
+  position: relative;
+  width: 100%;
+  max-width: 90vw;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+#ground {
+  height: 32px;
+  width: 100%;
+  max-width: 90vw;
+  background: #c84c0c url("../img/groundblock32.png");
+  -webkit-animation: scroll-ground 0.25s linear infinite;
+          animation: scroll-ground 0.25s linear infinite;
+}
+
+@-webkit-keyframes scroll-ground {
+  100% {
+    background-position: -32px 0;
+  }
+}
+
+@keyframes scroll-ground {
+  100% {
+    background-position: -32px 0;
+  }
+}
+
+.cloud {
+  position: absolute;
+  height: 100px;
+  top: 30px;
+  -webkit-animation: wind 1s linear infinite;
+          animation: wind 1s linear infinite;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+}
+
+.cloud:nth-child(1) {
+  -webkit-animation-duration: 34s;
+          animation-duration: 34s;
+  right: 0;
+}
+
+.cloud:nth-child(2) {
+  -webkit-animation-duration: 55s;
+          animation-duration: 55s;
+  right: -300px;
+}
+
+.cloud:nth-child(3) {
+  -webkit-animation-duration: 89s;
+          animation-duration: 89s;
+  top: 40px;
+  right: -500px;
+}
+
+.cloud:nth-child(4) {
+  -webkit-animation-duration: 144s;
+          animation-duration: 144s;
+  top: 40px;
+  right: -800px;
+}
+
+.cloud:nth-child(5) {
+  -webkit-animation-duration: 233s;
+          animation-duration: 233s;
+  top: 40px;
+  right: -1300px;
+}
+
+@-webkit-keyframes wind {
+  to {
+    right: 100vw;
+  }
+}
+
+@keyframes wind {
+  to {
+    right: 100vw;
+  }
+}
+
+/*
+  Snowflakes
+*/
+.snowflake {
+  display: absolute;
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial;
+  text-shadow: 0 0 1px #000;
+  position: absolute;
+  top: -10%;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+  -webkit-animation-duration: 10s, 3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
+}
+
+.snowflake:nth-of-type(0) {
+  left: 1%;
+  -webkit-animation-delay: 0s, 0s;
+  animation-delay: 0s, 0s;
+}
+
+.snowflake:nth-of-type(1) {
+  left: 10%;
+  -webkit-animation-delay: 1s, 1s;
+  animation-delay: 1s, 1s;
+}
+
+.snowflake:nth-of-type(2) {
+  left: 20%;
+  -webkit-animation-delay: 6s, 0.5s;
+  animation-delay: 6s, 0.5s;
+}
+
+.snowflake:nth-of-type(3) {
+  left: 30%;
+  -webkit-animation-delay: 4s, 2s;
+  animation-delay: 4s, 2s;
+}
+
+.snowflake:nth-of-type(4) {
+  left: 40%;
+  -webkit-animation-delay: 2s, 2s;
+  animation-delay: 2s, 2s;
+}
+
+.snowflake:nth-of-type(5) {
+  left: 50%;
+  -webkit-animation-delay: 8s, 3s;
+  animation-delay: 8s, 3s;
+}
+
+.snowflake:nth-of-type(6) {
+  left: 60%;
+  -webkit-animation-delay: 6s, 2s;
+  animation-delay: 6s, 2s;
+}
+
+.snowflake:nth-of-type(7) {
+  left: 70%;
+  -webkit-animation-delay: 2.5s, 1s;
+  animation-delay: 2.5s, 1s;
+}
+
+.snowflake:nth-of-type(8) {
+  left: 80%;
+  -webkit-animation-delay: 1s, 0s;
+  animation-delay: 1s, 0s;
+}
+
+.snowflake:nth-of-type(9) {
+  left: 90%;
+  -webkit-animation-delay: 3s, 1.5s;
+  animation-delay: 3s, 1.5s;
+}
+
+@-webkit-keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@-webkit-keyframes snowflakes-shake {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(80px);
+    transform: translateX(80px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+
+@keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes snowflakes-shake {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(80px);
+            transform: translateX(80px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+.pikachu {
+  /* background-color: greenyellow; */
+  background-image: url("../img/pikachu-sprite-trans.png");
+  background-position: -29px -141px;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0px;
+  height: 30px;
+  width: 52px;
+  margin: 90px auto 6px 25%;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-animation: pikachu-run 0.4s step-start infinite;
+          animation: pikachu-run 0.4s step-start infinite;
+}
+
+@-webkit-keyframes pikachu-run {
+  25% {
+    background-position: -89px -141px;
+  }
+  50% {
+    background-position: -149px -141px;
+  }
+  75% {
+    background-position: -209px -141px;
+  }
+}
+
+@keyframes pikachu-run {
+  25% {
+    background-position: -89px -141px;
+  }
+  50% {
+    background-position: -149px -141px;
+  }
+  75% {
+    background-position: -209px -141px;
+  }
+}
+
+.jumping {
+  -webkit-animation: jumping 0.75s linear;
+          animation: jumping 0.75s linear;
+}
+
+@-webkit-keyframes jumping {
+  0% {
+    bottom: 0;
+  }
+  30% {
+    bottom: 75px;
+  }
+  70% {
+    bottom: 75px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes jumping {
+  0% {
+    bottom: 0;
+  }
+  30% {
+    bottom: 75px;
+  }
+  70% {
+    bottom: 75px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+.diglet {
+  background: url("../img/diglet-sprite-trans.png");
+  background-position: -4px -2px;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 18px;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-animation: diglet 0.75s infinite step-start;
+          animation: diglet 0.75s infinite step-start;
+}
+
+@-webkit-keyframes diglet {
+  8% {
+    background-position: -128px -3px;
+  }
+  16% {
+    background-position: -3px -30px;
+  }
+  24% {
+    background-position: -35px -30px;
+  }
+  32% {
+    background-position: -4px -0px;
+  }
+  40% {
+    background-position: -32px -2px;
+  }
+  48% {
+    background-position: -63px -2px;
+  }
+  56% {
+    background-position: -94px -2px;
+  }
+  64% {
+    background-position: -63px -2px;
+  }
+  72% {
+    background-position: -32px -2px;
+  }
+  80% {
+    background-position: -4px -0px;
+  }
+  88% {
+    background-position: -35px -30px;
+  }
+  96% {
+    background-position: -3px -30px;
+  }
+}
+
+@keyframes diglet {
+  8% {
+    background-position: -128px -3px;
+  }
+  16% {
+    background-position: -3px -30px;
+  }
+  24% {
+    background-position: -35px -30px;
+  }
+  32% {
+    background-position: -4px -0px;
+  }
+  40% {
+    background-position: -32px -2px;
+  }
+  48% {
+    background-position: -63px -2px;
+  }
+  56% {
+    background-position: -94px -2px;
+  }
+  64% {
+    background-position: -63px -2px;
+  }
+  72% {
+    background-position: -32px -2px;
+  }
+  80% {
+    background-position: -4px -0px;
+  }
+  88% {
+    background-position: -35px -30px;
+  }
+  96% {
+    background-position: -3px -30px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  line-height: 1.35;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+#container {
+  width: 90vw;
+  max-width: 900px;
+  margin: 5vh auto 0;
+}
+
+#intro {
+  padding: 0 0 5vh;
+  text-align: center;
+}
+
+#startBtn {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+#info {
+  text-align: center;
+}
+
+#scoreboard li {
+  float: right;
+  margin: 1rem 0;
+}
+
+#scoreboard li:first-child {
+  float: left;
+}
+
+#game {
+  background: blueviolet;
+}
+
+.enemy-running {
+  position: absolute;
+  bottom: 5px;
+  right: -40px;
+  /* animation: enemy-scroll 3s infinite linear; */
+}
+
+.enemy-flying {
+  position: absolute;
+  bottom: 70px;
+  right: -40px;
+  /* animation: enemy-scroll 10s infinite linear; */
+}
+
+@-webkit-keyframes enemy-scroll {
+  0% {
+    right: -10px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes enemy-scroll {
+  0% {
+    right: -10px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+/*# sourceMappingURL=main.css.map */
