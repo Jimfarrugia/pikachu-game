@@ -13,26 +13,18 @@ const enemies = document.querySelectorAll(".enemy");
 const animateEnemy = enemy => enemy.style.animation = "enemy-scroll 3s infinite linear";
 
 const startGame = () => {
-	if (gameContainer.classList.value.includes("hidden")) {
-		gameContainer.classList.remove("hidden");
-		intro.classList.add("hidden");
-		gameActive = true;
-		enemies.forEach((enemy, index) => {
-			animateEnemy(enemy)
-			if (index % 2 !== 0) {
-				enemy.style.animationDelay = "2s";
-			}
-		});
-	}	
-}
-startButton.addEventListener("click", () => {
-	startGame();
-});
+	gameActive = true;
+	enemies.forEach((enemy, index) => {
+		animateEnemy(enemy)
+		if (index % 2 !== 0) {
+			enemy.style.animationDelay = "2s";
+		}
+	});
+}	
+
+startButton.addEventListener("click", () => startGame());
 restartButton.addEventListener("click", () => {
 	startGame();
-	enemies.forEach(enemy => {
-		animateEnemy(enemy)
-	});
 	restartButton.classList.value = "hidden";
 });
 
