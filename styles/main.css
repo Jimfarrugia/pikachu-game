@@ -646,6 +646,11 @@ table {
   }
 }
 
+@font-face {
+  font-family: "Pixeled";
+  src: url("../fonts/pixeled.ttf");
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -677,19 +682,24 @@ p {
 }
 
 #startBtn {
+  font-family: "Pixeled", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 3rem;
+  text-decoration: none;
+  color: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -1rem 0 0 -7.5rem;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 5rem;
-  letter-spacing: 0.125rem;
-  text-decoration: none;
-  color: #fff;
+  margin: -3rem 0 0 -10rem;
+  padding: 1.25rem 1rem 2.5rem 2rem;
+  border: 2px solid #ffffff90;
+  border-radius: 0.5rem;
 }
 
 #startBtn:hover {
   color: #eee;
+  border-color: #ffffffaa;
+  -webkit-box-shadow: 0 0 20px #ffffffaa;
+          box-shadow: 0 0 20px #ffffffaa;
 }
 
 #info {

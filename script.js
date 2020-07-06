@@ -32,9 +32,9 @@ const startGame = () => {
 	animateEnemies(enemies);
 };
 
-const updateScore = score => currentScore.innerHTML = `Score: ${score}`;
+const updateScore = n => { score = n; currentScore.innerHTML = `Score: ${score}`; };
 
-const updateRecord = record => currentRecord.innerHTML = `Record: ${record}`;
+const updateRecord = n => { record = n; currentRecord.innerHTML = `Record: ${record}`; };
 
 startButton.addEventListener("click", () => startGame());
 
@@ -60,20 +60,15 @@ const checkDead = setInterval(function() {
 		enemies.forEach(enemy => {
 			const enemyEdges = enemy.getBoundingClientRect();
 			if (overlap(characterEdges, enemyEdges)) {
-				score = 0;
-				updateScore(score);
+				updateScore(0);
 				removeEnemies(enemies);
 				unhideElement(startButton)
 				gameActive = false;
 			}
 			// Count a score
 			if (enemyEdges.left <= 26) {
-				score += 1;
-				updateScore(score);
-				if (score > record) {
-					record = score;
-					updateRecord(record);
-				};
+				updateScore(score + 1);
+				if (score > record) updateRecord(score);
 			}
 		});
 	}
