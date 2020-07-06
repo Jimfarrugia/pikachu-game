@@ -3,6 +3,7 @@
 @import "clouds";
 @import "snowflakes";
 @import "pikachu";
+@import "enemy";
 @import "diglet";
 @import "pidgey";
 @import "colorBleed";
@@ -60,6 +61,7 @@ p {
   border: 2px solid #ffffff90;
   border-radius: 0.5rem;
 }
+
 #startBtn:hover {
   color: #eee;
   border-color: #ffffffaa;
@@ -72,25 +74,4 @@ p {
 }
 #scoreboard li:first-child {
   float: left;
-}
-
-.enemy-running {
-  position: absolute;
-  bottom: 4px;
-  right: -40px;
-}
-
-.enemy-flying {
-  position: absolute;
-  bottom: 70px;
-  right: -40px;
-}
-
-@keyframes enemy-scroll {
-  0% {
-    right: -10px;
-  }
-  100% {
-    right: 100%;
-  }
 }

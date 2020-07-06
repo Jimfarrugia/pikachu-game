@@ -428,6 +428,36 @@ table {
   }
 }
 
+.enemy-running {
+  position: absolute;
+  bottom: 4px;
+  right: -40px;
+}
+
+.enemy-flying {
+  position: absolute;
+  bottom: 70px;
+  right: -40px;
+}
+
+@-webkit-keyframes enemy-scroll {
+  0% {
+    right: -10px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes enemy-scroll {
+  0% {
+    right: -10px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
 .diglet {
   background: url("../img/diglet-sprite-trans.png");
   background-position: -4px -2px;
@@ -713,35 +743,5 @@ p {
 
 #scoreboard li:first-child {
   float: left;
-}
-
-.enemy-running {
-  position: absolute;
-  bottom: 4px;
-  right: -40px;
-}
-
-.enemy-flying {
-  position: absolute;
-  bottom: 70px;
-  right: -40px;
-}
-
-@-webkit-keyframes enemy-scroll {
-  0% {
-    right: -10px;
-  }
-  100% {
-    right: 100%;
-  }
-}
-
-@keyframes enemy-scroll {
-  0% {
-    right: -10px;
-  }
-  100% {
-    right: 100%;
-  }
 }
 /*# sourceMappingURL=main.css.map */
