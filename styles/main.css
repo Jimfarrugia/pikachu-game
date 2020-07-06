@@ -518,6 +518,46 @@ table {
   }
 }
 
+.pidgey {
+  background: url("../img/pidgey-sprite-trans.png");
+  background-position: -46px -2px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 34px;
+  -webkit-animation: pidgey-fly 0.4s infinite step-start;
+          animation: pidgey-fly 0.4s infinite step-start;
+}
+
+@-webkit-keyframes pidgey-fly {
+  0% {
+    background-position: -46px -2px;
+  }
+  25% {
+    background-position: -88px -2px;
+  }
+  50% {
+    background-position: -126px -2px;
+  }
+  75% {
+    background-position: -88px -2px;
+  }
+}
+
+@keyframes pidgey-fly {
+  0% {
+    background-position: -46px -2px;
+  }
+  25% {
+    background-position: -88px -2px;
+  }
+  50% {
+    background-position: -126px -2px;
+  }
+  75% {
+    background-position: -88px -2px;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
