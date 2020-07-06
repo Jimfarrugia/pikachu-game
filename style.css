@@ -110,26 +110,41 @@ p {
 }
 
 @keyframes diglet {
-  0% {
+  8% {
     background-position: -128px -3px;
   }
-  15% {
+  16% {
     background-position: -3px -30px;
   }
-  30% {
+  24% {
     background-position: -35px -30px;
   }
-  45% {
+  32% {
     background-position: -4px -0px;
   }
-  60% {
+  40% {
     background-position: -32px -2px;
   }
-  75% {
+  48% {
     background-position: -63px -2px;
   }
-  90% {
+  56% {
     background-position: -94px -2px;
+  }
+  64% {
+    background-position: -63px -2px;
+  }
+  72% {
+    background-position: -32px -2px;
+  }
+  80% {
+    background-position: -4px -0px;
+  }
+  88% {
+    background-position: -35px -30px;
+  }
+  96% {
+    background-position: -3px -30px;
   }
 }
 
@@ -160,7 +175,7 @@ p {
   position: absolute;
   bottom: 5px;
   right: -20px;
-  animation: enemy-scroll 5s infinite linear;
+  /* animation: enemy-scroll 3s infinite linear; */
 }
 
 .enemy-flying {
@@ -180,7 +195,7 @@ p {
 }
 
 .jumping {
-  animation: jumping 0.5s linear infinite;
+  animation: jumping 0.75s linear;
 }
 
 @keyframes jumping {
@@ -188,10 +203,10 @@ p {
     bottom: 0;
   }
   30% {
-    bottom: 50px;
+    bottom: 75px;
   }
   70% {
-    bottom: 50px;
+    bottom: 75px;
   }
   100% {
     bottom: 0;
