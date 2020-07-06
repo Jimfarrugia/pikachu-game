@@ -74,8 +74,8 @@ const checkDead = setInterval(function() {
 /*
 	* Generate Clouds
 */
-const singleCloudImgPath = "https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/CloudSingle.gif"
-const doubleCloudImgPath = "https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/CloudDouble.gif"
+const singleCloudImgPath = "img/cloud-single.gif"
+const doubleCloudImgPath = "img/cloud-double.gif"
 
 const clouds = document.getElementById("clouds");
 
