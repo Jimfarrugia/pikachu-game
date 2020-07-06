@@ -56,7 +56,6 @@ document.body.ontouchstart = () => jump();
 const checkDead = setInterval(function() {
 	if (gameActive) {
 		const characterEdges = character.getBoundingClientRect();
-		
 		enemies.forEach(enemy => {
 			const enemyEdges = enemy.getBoundingClientRect();
 			if (overlap(characterEdges, enemyEdges)) {
@@ -67,6 +66,7 @@ const checkDead = setInterval(function() {
 			}
 			// Count a score
 			if (enemyEdges.left <= 26) {
+				console.log('score');
 				updateScore(score + 1);
 				if (score > record) updateRecord(score);
 			}

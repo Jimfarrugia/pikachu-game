@@ -675,6 +675,10 @@ p {
   display: none;
 }
 
+.align-center {
+  text-align: center;
+}
+
 #container {
   width: 90vw;
   max-width: 900px;
@@ -702,10 +706,6 @@ p {
           box-shadow: 0 0 20px #ffffffaa;
 }
 
-#info {
-  text-align: center;
-}
-
 #scoreboard li {
   float: right;
   margin: 1rem 0;
@@ -715,22 +715,16 @@ p {
   float: left;
 }
 
-#game {
-  background: blueviolet;
-}
-
 .enemy-running {
   position: absolute;
-  bottom: 5px;
+  bottom: 4px;
   right: -40px;
-  /* animation: enemy-scroll 3s infinite linear; */
 }
 
 .enemy-flying {
   position: absolute;
   bottom: 70px;
   right: -40px;
-  /* animation: enemy-scroll 10s infinite linear; */
 }
 
 @-webkit-keyframes enemy-scroll {
