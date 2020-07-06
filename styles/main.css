@@ -354,7 +354,6 @@ table {
 }
 
 .pikachu {
-  /* background-color: greenyellow; */
   background-image: url("../img/pikachu-sprite-trans.png");
   background-position: -29px -141px;
   background-repeat: no-repeat;
@@ -588,91 +587,70 @@ table {
   }
 }
 
-:root {
-  --bg-color: #000010;
-  --heading-color: rgba(255, 255, 255, 0);
-  --red-bleed-color: rgba(255, 0, 129, 1);
-  --blue-bleed-color: rgba(66, 198, 255, 1);
-  --dim-red-bleed-color: rgba(255, 0, 129, 0.1);
-  --dim-blue-bleed-color: rgba(66, 198, 255, 0.1);
-  --white-bleed: 0 0 0.125rem rgba(255, 255, 255, 0.9);
-  --red-bleed: -0.25rem -0.25rem 0.25rem var(--red-bleed-color);
-  --blue-bleed: 0.25rem 0.25rem 0.25rem var(--blue-bleed-color);
-  --dim-red-bleed: -0.25rem -0.25rem 0.25rem var(--dim-red-bleed-color);
-  --dim-blue-bleed: 0.25rem 0.25rem 0.25rem var(--dim-blue-bleed-color);
-  --color-bleed-shadow: var(--white-bleed), var(--red-bleed), var(--blue-bleed);
-  --red-flickering-shadow: var(--white-bleed), var(--red-bleed),
-    var(--blue-bleed), var(--white-bleed), var(--dim-red-bleed),
-    var(--blue-bleed);
-  --blue-flickering-shadow: var(--white-bleed), var(--red-bleed),
-    var(--blue-bleed), var(--white-bleed), var(--red-bleed),
-    var(--dim-blue-bleed);
-}
-
 .color-bleed {
-  color: var(--heading-color);
-  text-shadow: var(--color-bleed-shadow);
+  color: rgba(255, 255, 255, 0);
+  text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff;
   -webkit-animation: letter-flicker 2s ease-in-out infinite;
           animation: letter-flicker 2s ease-in-out infinite;
 }
 
 @-webkit-keyframes letter-flicker {
   0% {
-    text-shadow: var(--color-bleed-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff;
   }
   2% {
-    text-shadow: var(--red-flickering-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff, 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem rgba(255, 0, 129, 0.1), 0.25rem 0.25rem 0.25rem #42c6ff;
   }
   4% {
-    text-shadow: var(--color-bleed-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff;
   }
   19% {
-    text-shadow: var(--blue-flickering-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff, 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem rgba(66, 198, 255, 0.1);
   }
   21% {
-    text-shadow: var(--color-bleed-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff;
   }
   23% {
-    text-shadow: var(--red-flickering-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff, 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem rgba(255, 0, 129, 0.1), 0.25rem 0.25rem 0.25rem #42c6ff;
   }
   80% {
-    text-shadow: var(--color-bleed-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff;
   }
   83% {
-    text-shadow: var(--blue-flickering-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff, 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem rgba(66, 198, 255, 0.1);
   }
   87% {
-    text-shadow: var(--red-flickering-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff, 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem rgba(255, 0, 129, 0.1), 0.25rem 0.25rem 0.25rem #42c6ff;
   }
 }
 
 @keyframes letter-flicker {
   0% {
-    text-shadow: var(--color-bleed-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff;
   }
   2% {
-    text-shadow: var(--red-flickering-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff, 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem rgba(255, 0, 129, 0.1), 0.25rem 0.25rem 0.25rem #42c6ff;
   }
   4% {
-    text-shadow: var(--color-bleed-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff;
   }
   19% {
-    text-shadow: var(--blue-flickering-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff, 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem rgba(66, 198, 255, 0.1);
   }
   21% {
-    text-shadow: var(--color-bleed-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff;
   }
   23% {
-    text-shadow: var(--red-flickering-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff, 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem rgba(255, 0, 129, 0.1), 0.25rem 0.25rem 0.25rem #42c6ff;
   }
   80% {
-    text-shadow: var(--color-bleed-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff;
   }
   83% {
-    text-shadow: var(--blue-flickering-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff, 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem rgba(66, 198, 255, 0.1);
   }
   87% {
-    text-shadow: var(--red-flickering-shadow);
+    text-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem #ff0081, 0.25rem 0.25rem 0.25rem #42c6ff, 0 0 0.125rem rgba(255, 255, 255, 0.9), -0.25rem -0.25rem 0.25rem rgba(255, 0, 129, 0.1), 0.25rem 0.25rem 0.25rem #42c6ff;
   }
 }
 
