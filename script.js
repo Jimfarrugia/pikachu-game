@@ -1,12 +1,42 @@
 const intro = document.getElementById("intro");
 const background = document.getElementById("background");
 const startButton = document.getElementById("startBtn");
+// const volumeButton = document.getElementById("volumeBtn");
 const gameContainer = document.getElementById("game");
 const character = document.querySelector(".pikachu");
 const scoreDisplay = document.getElementById("currentScore");
 const recordDisplay = document.getElementById("currentRecord");
 const scoreboard = { score: 0, record: 0 };
 let gameActive = false;
+// let volume = false;
+
+function Sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function(){ this.sound.play(); }
+  this.pause = function(){ this.sound.pause(); }
+  this.stop = function(){
+		this.sound.pause();
+		this.sound.currentTime = 0;
+	}
+}
+const jumpSound = new Sound("audio/jump.mp3");
+const deathSound = new Sound("audio/death.mp3");
+// const music = new Sound("audio/route-1.mp3");
+
+// const toggleVolume = volume => {
+// 	if (volume) {
+// 		volume = false;
+// 		music.stop();
+// 	} else {
+// 		volume = true;
+// 		music.play();
+// 	}
+// }
 
 const createDiglet = () => {
 	let enemy = document.createElement("div");
@@ -46,11 +76,13 @@ const isOverlapping = (a, b) => !(
 const startGame = () => {
 	startButton.classList.add("hidden")
 	gameActive = true;
+	jumpSound.play();
 	createDiglet();
 	createPidgey();
 };
 
 const endGame = () => {
+	deathSound.play();
 	const enemies = document.querySelectorAll(".enemy");
 	enemies.forEach(enemy => enemy.remove());
 	updateScore(0);
@@ -60,6 +92,7 @@ const endGame = () => {
 
 const jump = () => {
 	if (!character.classList.value.includes("jumping")) {
+		jumpSound.play();
 		character.classList.add("jumping");
 		setTimeout(() => character.classList.remove("jumping"), 750);
 	}
@@ -72,6 +105,7 @@ document.body.onkeyup = e => (e.keyCode === 32 || e.keyCode === 38) ? jump() : n
 document.body.ontouchstart = () => jump();
 
 startButton.addEventListener("click", () => startGame());
+// volumeButton.addEventListener("click", () => toggleVolume(volume));
 
 // * Check for death
 const checkDead = setInterval(function() {

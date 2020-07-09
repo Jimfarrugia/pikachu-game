@@ -689,8 +689,8 @@ table {
 #startBtn:hover {
   color: #eee;
   border-color: #ffffffaa;
-  -webkit-box-shadow: 0 0 20px #ffffffaa;
-          box-shadow: 0 0 20px #ffffffaa;
+  -webkit-box-shadow: 0 0 15px #ffffffaa;
+          box-shadow: 0 0 15px #ffffffaa;
 }
 
 @-webkit-keyframes glow {
@@ -742,6 +742,13 @@ p {
   width: 90vw;
   max-width: 600px;
   margin: 5vh auto 0;
+}
+
+#volumeBtn {
+  background: green;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 #scoreboard {

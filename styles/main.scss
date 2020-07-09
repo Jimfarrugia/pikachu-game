@@ -50,6 +50,13 @@ p {
   margin: 5vh auto 0;
 }
 
+#volumeBtn {
+  background: green;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 #scoreboard {
   box-sizing: border-box;
   position: absolute;
