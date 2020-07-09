@@ -1,23 +1,23 @@
 const intro = document.getElementById("intro");
+const background = document.getElementById("background");
 const startButton = document.getElementById("startBtn");
 const gameContainer = document.getElementById("game");
 const character = document.querySelector(".pikachu");
-const enemies = document.querySelectorAll(".enemy");
 const scoreDisplay = document.getElementById("currentScore");
 const recordDisplay = document.getElementById("currentRecord");
 const scoreboard = { score: 0, record: 0 };
 let gameActive = false;
 
-// * 
-// * create/delete the enemy elements instead of showing/hiding them
-// * 
-// * count the score if enemy.x intersects left edge of game window
-// * ^ delete the enemy immediately afterwards so it doesn't count another score
-// * 
-// * 
-// * setup chrome debugger
-// *
-// *
+const createDiglet = () => {
+	let enemy = document.createElement("div");
+	enemy.classList = "enemy enemy-running";
+
+	let diglet = document.createElement("div");
+	diglet.className = "diglet";
+
+	enemy.appendChild(diglet);
+	background.appendChild(enemy);
+}
 
 const updateScore = n => { scoreboard.score = n; scoreDisplay.innerHTML = `${scoreboard.score}`; };
 const updateRecord = n => { scoreboard.record = n; recordDisplay.innerHTML = `${scoreboard.record}`; };
@@ -30,20 +30,19 @@ const hideElement = element => element.classList.add("hidden");
 
 const unhideElement = element => element.classList.remove("hidden");
 
-const animateEnemies = enemies => 
-	enemies.forEach((enemy, index) => {
-		enemy.style.animation = "enemy-scroll 3s infinite linear";
-		if (index % 2 !== 0) enemy.style.animationDelay = "4s";
-	});
-
-const removeEnemies = enemies =>
-	enemies.forEach(enemy => enemy.style.animation = "none");
-
 const startGame = () => {
 	hideElement(startButton);
 	gameActive = true;
-	animateEnemies(enemies);
+	createDiglet();
 };
+
+const endGame = () => {
+	const enemies = document.querySelectorAll(".enemy");
+	enemies.forEach(enemy => enemy.remove());
+	updateScore(0);
+	unhideElement(startButton);
+	gameActive = false;
+}
 
 const jump = () => {
 	if (!isJumping()) {
@@ -63,21 +62,19 @@ startButton.addEventListener("click", () => startGame());
 // * Check for death
 const checkDead = setInterval(function() {
 	if (gameActive) {
+		const enemies = document.querySelectorAll(".enemy");
 		const characterEdges = character.getBoundingClientRect();
+		const backgroundEdges = background.getBoundingClientRect();
 		enemies.forEach(enemy => {
 			const enemyEdges = enemy.getBoundingClientRect();
 			if (isOverlapping(characterEdges, enemyEdges)) {
-				updateScore(0);
-				removeEnemies(enemies);
-				unhideElement(startButton);
-				gameActive = false;
+				endGame();
 			}
-			// Count a score
-			if (enemyEdges.left <= 26) {
-				const { score, record } = scoreboard;
-				console.log('score', score);
-				updateScore(score + 1);
-				if (score > record) updateRecord(score);
+			if (!isOverlapping(enemyEdges, backgroundEdges)) {
+				createDiglet();
+				updateScore(scoreboard.score + 1);
+				if (scoreboard.score > scoreboard.record) updateRecord(scoreboard.score);
+				enemy.remove();
 			}
 		});
 	}
