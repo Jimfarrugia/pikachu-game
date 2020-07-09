@@ -444,6 +444,10 @@ table {
   position: absolute;
   bottom: 70px;
   right: -40px;
+  -webkit-animation: enemy-scroll 2s linear;
+          animation: enemy-scroll 2s linear;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
 }
 
 @-webkit-keyframes enemy-scroll {

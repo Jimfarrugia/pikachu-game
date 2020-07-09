@@ -9,6 +9,8 @@
   position: absolute;
   bottom: 70px;
   right: -40px;
+  animation: enemy-scroll 2s linear;
+  animation-delay: 2s;
 }
 
 @keyframes enemy-scroll {

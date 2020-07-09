@@ -19,6 +19,17 @@ const createDiglet = () => {
 	background.appendChild(enemy);
 }
 
+const createPidgey = () => {
+	let enemy = document.createElement("div");
+	enemy.classList = "enemy enemy-flying";
+
+	let pidgey = document.createElement("div");
+	pidgey.className = "pidgey";
+
+	enemy.appendChild(pidgey);
+	background.appendChild(enemy);
+}
+
 const updateScore = n => { scoreboard.score = n; scoreDisplay.innerHTML = `${scoreboard.score}`; };
 const updateRecord = n => { scoreboard.record = n; recordDisplay.innerHTML = `${scoreboard.record}`; };
 
@@ -28,6 +39,7 @@ const startGame = () => {
 	startButton.classList.add("hidden")
 	gameActive = true;
 	createDiglet();
+	createPidgey();
 };
 
 const endGame = () => {
@@ -64,8 +76,9 @@ const checkDead = setInterval(function() {
 			if (isOverlapping(characterEdges, enemyEdges)) {
 				endGame();
 			}
-			if (!isOverlapping(enemyEdges, backgroundEdges)) {
-				createDiglet();
+			// ! Problems respawning pidgey...  also doesn't count score on pidgey
+			if (!isOverlapping(backgroundEdges, enemyEdges)) {
+				enemy.className === "enemy enemy-flying" ? createPidgey() : createDiglet();
 				updateScore(scoreboard.score + 1);
 				if (scoreboard.score > scoreboard.record) updateRecord(scoreboard.score);
 				enemy.remove();
