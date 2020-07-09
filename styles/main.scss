@@ -48,11 +48,9 @@ p {
   width: 90vw;
   max-width: 600px;
   margin: 5vh auto 0;
-  // background: green;
 }
 
 #scoreboard {
-  // background: orange;
   box-sizing: border-box;
   position: absolute;
   top: 0;
@@ -71,17 +69,3 @@ p {
     }
   }
 }
-
-// @media (max-width: 850px) {
-//   #container {
-//     margin: 10px auto 0;
-//     width: 600px;
-//   }
-//   #background {
-//     min-height: 266px;
-//     margin: 0 auto;
-//   }
-//   #ground {
-//     margin: 0 auto;
-//   }
-// }
