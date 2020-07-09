@@ -22,16 +22,10 @@ const createDiglet = () => {
 const updateScore = n => { scoreboard.score = n; scoreDisplay.innerHTML = `${scoreboard.score}`; };
 const updateRecord = n => { scoreboard.record = n; recordDisplay.innerHTML = `${scoreboard.record}`; };
 
-const isJumping = () => character.classList.value.includes("jumping");
-
 const isOverlapping = (a, b) => !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
 
-const hideElement = element => element.classList.add("hidden");
-
-const unhideElement = element => element.classList.remove("hidden");
-
 const startGame = () => {
-	hideElement(startButton);
+	startButton.classList.add("hidden")
 	gameActive = true;
 	createDiglet();
 };
@@ -40,12 +34,12 @@ const endGame = () => {
 	const enemies = document.querySelectorAll(".enemy");
 	enemies.forEach(enemy => enemy.remove());
 	updateScore(0);
-	unhideElement(startButton);
+	startButton.classList.remove("hidden");
 	gameActive = false;
 }
 
 const jump = () => {
-	if (!isJumping()) {
+	if (!character.classList.value.includes("jumping")) {
 		character.classList.add("jumping");
 		setTimeout(() => character.classList.remove("jumping"), 750);
 	}
