@@ -141,17 +141,18 @@ table {
   position: relative;
   width: 100%;
   max-width: 90vw;
-  min-height: 400px;
+  min-height: 150px;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 #ground {
-  height: 32px;
+  height: 16px;
   width: 100%;
-  max-width: 90vw;
   background: #c84c0c url("../img/groundblock32.png");
-  -webkit-animation: scroll-ground 0.25s linear infinite;
-          animation: scroll-ground 0.25s linear infinite;
+  -webkit-animation: scroll-ground 0.4s linear infinite;
+          animation: scroll-ground 0.4s linear infinite;
+  background-size: 16px;
 }
 
 @-webkit-keyframes scroll-ground {
@@ -169,55 +170,57 @@ table {
 .cloud {
   position: absolute;
   height: 100px;
-  top: 30px;
+  top: 5px;
   -webkit-animation: wind 1s linear infinite;
           animation: wind 1s linear infinite;
-  -webkit-transform: scale(0.75);
-          transform: scale(0.75);
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
 }
 
 .cloud:nth-child(1) {
   -webkit-animation-duration: 34s;
           animation-duration: 34s;
   right: 0;
+  top: 5px;
 }
 
 .cloud:nth-child(2) {
   -webkit-animation-duration: 55s;
           animation-duration: 55s;
+  top: 10px;
   right: -300px;
 }
 
 .cloud:nth-child(3) {
   -webkit-animation-duration: 89s;
           animation-duration: 89s;
-  top: 40px;
+  top: 5px;
   right: -500px;
 }
 
 .cloud:nth-child(4) {
   -webkit-animation-duration: 144s;
           animation-duration: 144s;
-  top: 40px;
+  top: 10px;
   right: -800px;
 }
 
 .cloud:nth-child(5) {
   -webkit-animation-duration: 233s;
           animation-duration: 233s;
-  top: 40px;
+  top: 5px;
   right: -1300px;
 }
 
 @-webkit-keyframes wind {
   to {
-    right: 100vw;
+    right: 100%;
   }
 }
 
 @keyframes wind {
   to {
-    right: 100vw;
+    right: 100%;
   }
 }
 
@@ -363,12 +366,12 @@ table {
   background-position: -29px -141px;
   background-repeat: no-repeat;
   position: absolute;
-  bottom: 0px;
+  bottom: -2px;
   height: 30px;
   width: 52px;
-  margin: 90px auto 6px 25%;
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  margin: 90px auto 0px 25%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
   -webkit-animation: pikachu-run 0.4s step-start infinite;
           animation: pikachu-run 0.4s step-start infinite;
 }
@@ -404,37 +407,37 @@ table {
 
 @-webkit-keyframes jumping {
   0% {
-    bottom: 0;
+    bottom: -2px;
   }
   30% {
-    bottom: 75px;
+    bottom: 50px;
   }
   70% {
-    bottom: 75px;
+    bottom: 50px;
   }
   100% {
-    bottom: 0;
+    bottom: -2px;
   }
 }
 
 @keyframes jumping {
   0% {
-    bottom: 0;
+    bottom: -2px;
   }
   30% {
-    bottom: 75px;
+    bottom: 50px;
   }
   70% {
-    bottom: 75px;
+    bottom: 50px;
   }
   100% {
-    bottom: 0;
+    bottom: -2px;
   }
 }
 
 .enemy-running {
   position: absolute;
-  bottom: 4px;
+  bottom: 0;
   right: -40px;
   -webkit-animation: enemy-scroll 3s linear;
           animation: enemy-scroll 3s linear;
@@ -474,8 +477,8 @@ table {
   background-repeat: no-repeat;
   width: 25px;
   height: 18px;
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  -webkit-transform: scale(1);
+          transform: scale(1);
   -webkit-animation: diglet 0.75s infinite step-start;
           animation: diglet 0.75s infinite step-start;
 }
@@ -566,6 +569,8 @@ table {
   height: 34px;
   -webkit-animation: pidgey-fly 0.4s infinite step-start;
           animation: pidgey-fly 0.4s infinite step-start;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
 }
 
 @-webkit-keyframes pidgey-fly {
@@ -667,14 +672,14 @@ table {
 
 #startBtn {
   font-family: "Pixeled", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 3rem;
+  font-size: 1.5rem;
   text-decoration: none;
   color: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -3rem 0 0 -10rem;
-  padding: 1.25rem 1rem 2.5rem 2rem;
+  margin: -1.5rem 0 0 -6rem;
+  padding: 0.825rem 0.5rem 1.25rem 1rem;
   border: 2px solid #ffffff90;
   border-radius: 0.5rem;
   -webkit-animation: glow 1s infinite ease;
@@ -703,8 +708,9 @@ table {
 body {
   margin: 0;
   padding: 0;
-  background: #ccc;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background: #232323;
+  color: #dedede;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", Arial, sans-serif;
 }
 
 h1 {
@@ -728,15 +734,31 @@ p {
   text-align: center;
 }
 
+#info {
+  padding: 2rem 0;
+}
+
 #container {
   width: 90vw;
-  max-width: 900px;
+  max-width: 600px;
   margin: 5vh auto 0;
 }
 
+#scoreboard {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  color: #fff;
+}
+
 #scoreboard li {
+  font-family: "Pixeled", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", Arial, sans-serif;
+  font-size: 0.5rem;
   float: right;
-  margin: 1rem 0;
 }
 
 #scoreboard li:first-child {

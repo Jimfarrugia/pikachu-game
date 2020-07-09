@@ -13,8 +13,10 @@
 body {
   margin: 0;
   padding: 0;
-  background: #ccc;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background: #232323;
+  color: #dedede;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", Arial,
+    sans-serif;
 }
 
 h1 {
@@ -38,16 +40,48 @@ p {
   text-align: center;
 }
 
-#container {
-  width: 90vw;
-  max-width: 900px;
-  margin: 5vh auto 0;
+#info {
+  padding: 2rem 0;
 }
 
-#scoreboard li {
-  float: right;
-  margin: 1rem 0;
+#container {
+  width: 90vw;
+  max-width: 600px;
+  margin: 5vh auto 0;
+  // background: green;
 }
-#scoreboard li:first-child {
-  float: left;
+
+#scoreboard {
+  // background: orange;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  color: #fff;
+  li {
+    font-family: "Pixeled", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      Arial, sans-serif;
+    font-size: 0.5rem;
+    float: right;
+
+    &:first-child {
+      float: left;
+    }
+  }
 }
+
+// @media (max-width: 850px) {
+//   #container {
+//     margin: 10px auto 0;
+//     width: 600px;
+//   }
+//   #background {
+//     min-height: 266px;
+//     margin: 0 auto;
+//   }
+//   #ground {
+//     margin: 0 auto;
+//   }
+// }

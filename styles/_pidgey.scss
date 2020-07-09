@@ -5,6 +5,7 @@
   width: 40px;
   height: 34px;
   animation: pidgey-fly 0.4s infinite step-start;
+  transform: scale(0.7);
 }
 
 @keyframes pidgey-fly {

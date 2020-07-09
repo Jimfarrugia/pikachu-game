@@ -8,16 +8,17 @@ $sky-gradient-dark: linear-gradient(to bottom, #2d91c2 0%, #1e528e 100%);
   position: relative;
   width: 100%;
   max-width: 90vw;
-  min-height: 400px;
+  min-height: 150px;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 #ground {
-  height: 32px;
+  height: 16px;
   width: 100%;
-  max-width: 90vw;
   background: #c84c0c url("../img/groundblock32.png");
-  animation: scroll-ground 0.25s linear infinite;
+  animation: scroll-ground 0.4s linear infinite;
+  background-size: 16px;
 }
 
 @keyframes scroll-ground {

@@ -3,11 +3,11 @@
   background-position: -29px -141px;
   background-repeat: no-repeat;
   position: absolute;
-  bottom: 0px;
+  bottom: -2px;
   height: 30px;
   width: 52px;
-  margin: 90px auto 6px 25%;
-  transform: scale(1.5);
+  margin: 90px auto 0px 25%;
+  transform: scale(1);
   animation: pikachu-run 0.4s step-start infinite;
 }
 
@@ -29,15 +29,15 @@
 
 @keyframes jumping {
   0% {
-    bottom: 0;
+    bottom: -2px;
   }
   30% {
-    bottom: 75px;
+    bottom: 50px;
   }
   70% {
-    bottom: 75px;
+    bottom: 50px;
   }
   100% {
-    bottom: 0;
+    bottom: -2px;
   }
 }
