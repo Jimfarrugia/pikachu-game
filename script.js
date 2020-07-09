@@ -30,10 +30,22 @@ const createPidgey = () => {
 	background.appendChild(enemy);
 }
 
-const updateScore = n => { scoreboard.score = n; scoreDisplay.innerHTML = `${scoreboard.score}`; };
-const updateRecord = n => { scoreboard.record = n; recordDisplay.innerHTML = `${scoreboard.record}`; };
+const updateScore = n => { 
+	scoreboard.score = n; 
+	scoreDisplay.innerHTML = `${scoreboard.score}`;
+};
 
-const isOverlapping = (a, b) => !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
+const updateRecord = n => {
+	scoreboard.record = n;
+	recordDisplay.innerHTML = `${scoreboard.record}`;
+};
+
+const isOverlapping = (a, b) => !(
+	a.right < b.left ||
+	a.left > b.right ||
+	a.bottom < b.top ||
+	a.top > b.bottom
+);
 
 const startGame = () => {
 	startButton.classList.add("hidden")
