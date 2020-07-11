@@ -1,6 +1,7 @@
 import generateSnowflakes from "./modules/snowflakes.js";
 import generateClouds from "./modules/clouds.js";
 import { jumpSound, deathSound } from "./modules/sound.js";
+import { isOverlapping } from "./modules/helpers.js";
 import { updateScore, updateRecord } from "./modules/scoreboard.js";
 import { createDiglet, createPidgey } from "./modules/enemy.js";
 
@@ -10,13 +11,6 @@ const character = document.querySelector(".pikachu");
 
 const scoreboard = { score: 0, record: 0 };
 let gameActive = false;
-
-const isOverlapping = (a, b) => !(
-	a.right < b.left ||
-	a.left > b.right ||
-	a.bottom < b.top ||
-	a.top > b.bottom
-);
 
 const startGame = () => {
 	startButton.classList.add("hidden")
@@ -72,5 +66,5 @@ const checkDead = setInterval(() => {
 	}
 }, 10);
 
-generateClouds("clouds");
-generateSnowflakes("snowflakes");
+generateClouds(5);
+generateSnowflakes(10);

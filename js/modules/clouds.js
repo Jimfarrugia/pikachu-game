@@ -1,8 +1,8 @@
-export default function generateClouds(containerId) {
+export default function generateClouds(numberOfClouds) {
 	const singleCloudImgPath = "img/cloud-single.gif"
 	const doubleCloudImgPath = "img/cloud-double.gif"
 
-	const clouds = document.getElementById(containerId);
+	const clouds = document.getElementById("clouds");
 
 	const singleCloud = document.createElement("img");
 	singleCloud.classList = "cloud cloud-small";
@@ -12,8 +12,7 @@ export default function generateClouds(containerId) {
 	doubleCloud.classList = "cloud cloud-large";
 	doubleCloud.src = doubleCloudImgPath;
 
-	const numOfClouds = 5;
-	for (let i = 0; i < numOfClouds; i++) {
+	for (let i = 0; i < numberOfClouds; i++) {
 		(i % 2 === 0)
 		? clouds.innerHTML += doubleCloud.outerHTML
 		: clouds.innerHTML += singleCloud.outerHTML;
