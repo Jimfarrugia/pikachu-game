@@ -28,9 +28,8 @@ const startGame = () => {
 
 const endGame = () => {
 	deathSound.play();
-	const enemies = document.querySelectorAll(".enemy");
-	enemies.forEach(enemy => enemy.remove());
 	updateScore(0, scoreboard);
+	document.querySelectorAll(".enemy").forEach(enemy => enemy.remove());
 	startButton.classList.remove("hidden");
 	gameActive = false;
 }
@@ -52,7 +51,7 @@ document.body.ontouchstart = () => jump();
 startButton.addEventListener("click", () => startGame());
 
 // * Check for death
-const checkDead = setInterval(function() {
+const checkDead = setInterval(() => {
 	if (gameActive) {
 		const enemies = document.querySelectorAll(".enemy");
 		const characterEdges = character.getBoundingClientRect();
