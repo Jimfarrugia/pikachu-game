@@ -32,4 +32,6 @@ const deathSound = new Sound("audio/death.mp3");
 // 	}
 // }
 
+// volumeButton.addEventListener("click", () => toggleVolume(volume));
+
 export { jumpSound, deathSound };
