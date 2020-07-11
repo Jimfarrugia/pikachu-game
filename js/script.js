@@ -1,42 +1,16 @@
-const intro = document.getElementById("intro");
+import generateSnowflakes from "./modules/snowflakes.js";
+import generateClouds from "./modules/clouds.js";
+import { jumpSound, deathSound } from "./modules/sound.js";
+
+const gameContainer = document.getElementById("game");
 const background = document.getElementById("background");
 const startButton = document.getElementById("startBtn");
-// const volumeButton = document.getElementById("volumeBtn");
-const gameContainer = document.getElementById("game");
 const character = document.querySelector(".pikachu");
 const scoreDisplay = document.getElementById("currentScore");
 const recordDisplay = document.getElementById("currentRecord");
+
 const scoreboard = { score: 0, record: 0 };
 let gameActive = false;
-// let volume = false;
-
-function Sound(src) {
-  this.sound = document.createElement("audio");
-  this.sound.src = src;
-  this.sound.setAttribute("preload", "auto");
-  this.sound.setAttribute("controls", "none");
-  this.sound.style.display = "none";
-  document.body.appendChild(this.sound);
-  this.play = function(){ this.sound.play(); }
-  this.pause = function(){ this.sound.pause(); }
-  this.stop = function(){
-		this.sound.pause();
-		this.sound.currentTime = 0;
-	}
-}
-const jumpSound = new Sound("audio/jump.mp3");
-const deathSound = new Sound("audio/death.mp3");
-// const music = new Sound("audio/route-1.mp3");
-
-// const toggleVolume = volume => {
-// 	if (volume) {
-// 		volume = false;
-// 		music.stop();
-// 	} else {
-// 		volume = true;
-// 		music.play();
-// 	}
-// }
 
 const createDiglet = () => {
 	let enemy = document.createElement("div");
@@ -129,35 +103,6 @@ const checkDead = setInterval(function() {
 	}
 }, 10);
 
-// * Clouds
-const singleCloudImgPath = "img/cloud-single.gif"
-const doubleCloudImgPath = "img/cloud-double.gif"
 
-const clouds = document.getElementById("clouds");
-
-const singleCloud = document.createElement("img");
-singleCloud.classList = "cloud cloud-small";
-singleCloud.src = singleCloudImgPath;
-
-const doubleCloud = document.createElement("img");
-doubleCloud.classList = "cloud cloud-large";
-doubleCloud.src = doubleCloudImgPath;
-
-const numOfClouds = 5;
-for (let i = 0; i < numOfClouds; i++) {
-	(i % 2 === 0)
-	? clouds.innerHTML += doubleCloud.outerHTML
-	: clouds.innerHTML += singleCloud.outerHTML;
-}
-
-// * Snowflakes
-const snowflakes = document.getElementById("snowflakes");
-
-const snowflake = document.createElement("div");
-snowflake.className = "snowflake";
-snowflake.appendChild(document.createTextNode("❅"));
-
-const numOfSnowflakes = 10;
-for (let i = 0; i < numOfSnowflakes; i++) {
-	snowflakes.innerHTML += snowflake.outerHTML;
-}
+generateClouds("clouds");
+generateSnowflakes("snowflakes");
