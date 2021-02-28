@@ -5,4 +5,6 @@ const isOverlapping = (a, b) => !(
 	a.top > b.bottom
 );
 
-export { isOverlapping };
+const removeAllEnemies = () => document.querySelectorAll(".enemy").forEach(enemy => enemy.remove());
+
+export { isOverlapping, removeAllEnemies };
