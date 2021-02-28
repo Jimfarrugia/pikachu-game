@@ -1,7 +1,7 @@
 import generateSnowflakes from "./modules/snowflakes.js";
 import generateClouds from "./modules/clouds.js";
 import { jumpSound, deathSound } from "./modules/sound.js";
-import { isOverlapping } from "./modules/helpers.js";
+import { isOverlapping, removeAllEnemies } from "./modules/helpers.js";
 import { updateScore, updateRecord } from "./modules/scoreboard.js";
 import { createDiglet, createPidgey } from "./modules/enemy.js";
 
@@ -13,6 +13,7 @@ const scoreboard = { score: 0, record: 0 };
 let gameActive = false;
 
 const startGame = () => {
+	removeAllEnemies();
 	startButton.classList.add("hidden")
 	gameActive = true;
 	jumpSound.play();
@@ -21,9 +22,10 @@ const startGame = () => {
 };
 
 const endGame = () => {
+	console.log('game ended')
+	removeAllEnemies();
 	deathSound.play();
 	updateScore(0, scoreboard);
-	document.querySelectorAll(".enemy").forEach(enemy => enemy.remove());
 	startButton.classList.remove("hidden");
 	gameActive = false;
 }
@@ -47,19 +49,27 @@ startButton.addEventListener("click", () => startGame());
 // * Check for death
 const checkDead = setInterval(() => {
 	if (gameActive) {
-		const enemies = document.querySelectorAll(".enemy");
+		const { score, record } = scoreboard;
 		const characterEdges = character.getBoundingClientRect();
 		const backgroundEdges = background.getBoundingClientRect();
-		enemies.forEach(enemy => {
+		document.querySelectorAll(".enemy").forEach(enemy => {
 			const enemyEdges = enemy.getBoundingClientRect();
-			if (isOverlapping(characterEdges, enemyEdges)) {
-				endGame();
-			}
-			// ! Problems respawning pidgey...  also doesn't count score on pidgey
+			if (isOverlapping(characterEdges, enemyEdges)) endGame();
+			console.log('running');
+			// Score pidgey
+			if (enemy.classList.value.includes("enemy-flying") && enemyEdges.left < 125) {
+				console.log('new pidgey');
+				createPidgey();
+				updateScore(score+1, scoreboard);
+				if (score > record) updateRecord(score, scoreboard);
+				enemy.remove();
+			};
+			// Score diglet
 			if (!isOverlapping(backgroundEdges, enemyEdges)) {
-				enemy.className === "enemy enemy-flying" ? createPidgey() : createDiglet();
-				updateScore(scoreboard.score + 1, scoreboard);
-				if (scoreboard.score > scoreboard.record) updateRecord(scoreboard.score, scoreboard);
+				console.log('new diglet');
+				createDiglet();
+				updateScore(score+1, scoreboard);
+				if (score > record) updateRecord(score, scoreboard);
 				enemy.remove();
 			}
 		});
